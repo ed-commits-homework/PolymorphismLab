@@ -3,8 +3,8 @@ OnlineAccount
 ReportingSoftware
 
 (interface) IChargeable
-(abstract) PaymentCard
+(abstract) PaymentCard implements IChargeable
 
-CreditCard extends PaymentCard implements IChargable
-DebitCard extends PaymentCard implements IChargable
+CreditCard extends PaymentCard (which implements IChargable)
+DebitCard extends PaymentCard (which implements IChargable)
 GiftCard implements IChargable

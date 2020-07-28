@@ -8,4 +8,14 @@ public abstract class PaymentCard implements IChargeable {
     ArrayList<Double> charges;
     //Charging implies updating the list of charges
 
+    public PaymentCard(String cardNumber, Date expiryDate, int securityNumber) {
+        this.cardNumber = cardNumber;
+        this.expiryDate = expiryDate;
+        this.securityNumber = securityNumber;
+        charges = new ArrayList<Double>();
+    }
+
+    public void charge(double purchaseAmount) {
+
+    }
 }
