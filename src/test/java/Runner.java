@@ -43,4 +43,11 @@ public class Runner {
     public void testDebitCardTransactionCost() {
         assertEquals(1, debitcard.getTransactionCost(100), 0.001);
     }
+
+    @Test
+    public void testCountCharges(){
+        creditcard.charge(10);
+        creditcard.charge(100);
+        assertEquals(2, creditcard.countCharges());
+    }
 }
