@@ -1,0 +1,10 @@
+OnlineAccount
+
+ReportingSoftware
+
+(interface) IChargeable
+(abstract) PaymentCard
+
+CreditCard extends PaymentCard implements IChargable
+DebitCard extends PaymentCard implements IChargable
+GiftCard implements IChargable
