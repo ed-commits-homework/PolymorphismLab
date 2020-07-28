@@ -8,11 +8,15 @@ public class Runner {
     CreditCard creditcard;
     DebitCard debitcard;
 
+    ReportingSoftware repsoft;
+
     @Before
     public void setup() {
         giftcard = new GiftCard(35);
         creditcard = new CreditCard("012301230", null, 213, 6000);
         debitcard = new DebitCard("0120123", null, 424, 1010, 444);
+
+        repsoft = new ReportingSoftware();
     }
 
     @Test
@@ -49,5 +53,23 @@ public class Runner {
         creditcard.charge(10);
         creditcard.charge(100);
         assertEquals(2, creditcard.countCharges());
+    }
+
+    @Test
+    public void testReporting1() {
+        repsoft.addTransaction(2);
+        repsoft.addTransaction(3);
+        repsoft.addTransaction(5);
+        repsoft.addTransaction(2);
+        assertEquals(4, repsoft.countTransactions(), 0.001);
+    }
+
+    @Test
+    public void testReporting2() {
+        repsoft.addTransaction(2);
+        repsoft.addTransaction(3);
+        repsoft.addTransaction(5);
+        repsoft.addTransaction(2);
+        assertEquals(2+3+5+2, repsoft.total(), 0.001);
     }
 }
